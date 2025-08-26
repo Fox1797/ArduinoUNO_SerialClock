@@ -19,20 +19,16 @@ A simple yet powerful Arduino sketch that lets you set a daily alarm using seria
 ### 🧰 Hardware Requirements
 
 - Arduino Uno (or compatible board)  
-- Relay module connected to pin `13`  
-- USB connection for Serial Monitor
+- Relay module or whaterver you want to control connected to pin `13`   (can be customized)
+- USB connection for Serial Monitor or use hc-05 /hc-06 connected to tx and rx of arduino to remotly updated and read the time
 
 ---
 
 ### 📦 Installation
 
-1. Clone this repository  
-   ```bash
-   git clone https://github.com/yourusername/arduino-daily-alarm.git
-   ```
-2. Open the `.ino` file in the Arduino IDE  
-3. Upload to your board  
-4. Open Serial Monitor at `9600 baud`
+1. Open the `.ino` file in the Arduino IDE  
+2. Upload to your board  
+3. Open Serial Monitor at `9600 baud`
 
 ---
 
@@ -40,14 +36,14 @@ A simple yet powerful Arduino sketch that lets you set a daily alarm using seria
 
 | Command         | Description                        | Example         |
 |----------------|------------------------------------|-----------------|
-| `TIME hh:mmAM/PM`   | Set current time                   | `TIME 3:45PM`   |
-| `ALARM hh:mmAM/PM`  | Set and save alarm                 | `ALARM 7:30AM`  |
+| `TIME=hh:mmAM/PM`   | Set current time                   | `TIME=3:45PM`   |
+| `ALARM=hh:mmAM/PM`  | Set and save alarm                 | `ALARM=7:30AM`  |
 | `READ`          | Show current time and next alarm   | `READ`          |
 | `CLEARALARM`    | Remove alarm from EEPROM           | `CLEARALARM`    |
 
 ---
 
-### 🔔 Alarm Behavior
+### ⏰ Alarm Behavior
 
 - Triggers once per day at the set time  
 - Pulses the relay 5 times (500ms ON/OFF)  
@@ -65,18 +61,12 @@ A simple yet powerful Arduino sketch that lets you set a daily alarm using seria
 
 ---
 
-### 🧠 Future Ideas
+###  Future Ideas
 
 - Multiple alarms  
 - Weekday scheduling  
 - Snooze functionality  
-- RTC module integration for real-time accuracy
-
----
-
-### 📸 Preview
-
-> _Imagine a simple relay clicking on at 7:30AM every day, even after a power outage. That’s the magic of EEPROM._
+- RTC module integration for real-time accuracy. I built this as the rtc module never arrived so had to improvise...
 
 ---
 
